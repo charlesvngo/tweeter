@@ -3,11 +3,27 @@ nav {
   width: 100vw;
   background-color: #4056A1;
   display: flex;
+  color: #FFFFFF;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 
 span {
-  color: #FFFFFF;
+  margin-left: 1.5em;
+  font-size: xxx-large;
   font-family: bungee;
+  margin-bottom: 0.25em;
 }
 
+.right-nav {
+  margin-right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.arrow-icon {
+  color: red;
+}
