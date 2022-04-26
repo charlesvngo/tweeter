@@ -1,7 +1,10 @@
 .tweet-container {
   border: 4px solid #545149;
   padding: 0.5em;
+}
 
+.shadow {
+  box-shadow:10px 10px 0px rgba(0, 0, 0, 0.26);
 }
 
 .header-tweet {
@@ -52,5 +55,4 @@
 .social-media-buttons p {
   padding-left: 0.5em;
   padding-right: 0.5em;
-
 }
