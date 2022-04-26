@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  background-color: #0085fa;
+  z-index: 1;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.profile-name {
+  color: #FFFFFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 36px;
+
+}
+
+.avatar {
+  align-items: flex-end;
+  display: flex;
+  max-height: 75%;
+}
