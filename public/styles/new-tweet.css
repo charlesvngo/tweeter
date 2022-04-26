@@ -38,3 +38,7 @@
 .counter {
   font-family: 'Bungee'
 }
+
+.negative {
+  color: red;
+}
