@@ -28,15 +28,29 @@
 
 .tweet-body {
   border-bottom: 4px solid #545149;
+  padding: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
 }
 
-article footer {
+.footer-tweet {
   display: flex;
   justify-content: space-between;
-  
+  font-size: 14px;
+  margin: 0.5em;
 }
 
-article footer p {
-  font-size: 16px;
+.footer-tweet p {
   margin: 0px;
+} 
+
+.social-media-buttons {
+  display:flex;
+}
+
+.social-media-buttons p {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
 }
