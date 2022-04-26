@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#tweet-text").keyup(function(event) {
+  $("#tweet-text").keyup(function() {
     let counter = $(this).next().children().last();
     let tweetLength = $(this).val().length;
     counter.val(140 - tweetLength);
