@@ -25,3 +25,18 @@
 .header-tweet-handle {
   color: lightsteelblue;
 }
+
+.tweet-body {
+  border-bottom: 4px solid #545149;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+article footer p {
+  font-size: 16px;
+  margin: 0px;
+}
