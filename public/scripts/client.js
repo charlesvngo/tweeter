@@ -33,7 +33,7 @@ const createTweetElement = function(tweet) {
   $("<i>").addClass("fa-solid fa-flag").appendTo($buttons);
   $("<i>").addClass("fa-solid fa-retweet").appendTo($buttons);
   $("<i>").addClass("fa-solid fa-heart").appendTo($buttons);
-  $("<p>").text(`${tweet.created_at}`).appendTo($footer);
+  $("<p>").text(`${timeago.format(tweet.created_at)}`).appendTo($footer);
   $footer.append($buttons);
 
   // append footer to tweet
@@ -46,7 +46,13 @@ const createTweetElement = function(tweet) {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    $.post("/tweets", $("#tweet-text", this).serialize());
+    const tweet = $("#tweet-text", this).val();
+    if (tweet.length < 140 && tweet) {
+      $.post("/tweets", $("#tweet-text", this).serialize());
+      $(".error-message", this).hide();
+    } else {
+      $(".error-message", this).show();
+    }
   });
 });
 
@@ -54,7 +60,6 @@ $(document).ready(function() {
 const loadTweets = function() {
   $(document).ready(function() {
     $.get("/tweets", function(data) {
-      console.log(data);
       renderTweets(data);
     });
   });

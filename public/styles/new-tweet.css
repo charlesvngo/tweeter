@@ -44,3 +44,10 @@
 .negative {
   color: red;
 }
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-size: x-small;
+  display: none;
+}
