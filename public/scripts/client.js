@@ -38,25 +38,37 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweet) {
-  let $tweet = `
-  <article class="tweet-container">
-    <header class="header-tweet">
-      <div class="header-tweet-profile">
-        <img class ="profile-picture" src=${tweet.user.avatars}/>
-        <p>${tweet.user.name}</p>
-      </div>
-      <p class ="header-tweet-handle">${tweet.user.handle}</p>
-    </header>
-    <p class="tweet-body"">${tweet.content.text}</p>
-    <footer class="footer-tweet">
-      <p>${tweet.created_at}</p>
-      <div class="social-media-buttons">
-        <p><i class="fa-solid fa-flag"></i></p>
-        <p><i class="fa-solid fa-retweet"></i></p>
-        <p><i class="fa-solid fa-heart"></i></p>
-      </div>
-    </footer>
-  </article>`;
+  const $tweet = $("<article>").addClass("tweet-container");
+  const $profile = $("<div>").addClass("header-tweet-profile");
+  const $header = $("<header>").addClass("header-tweet");
+  const $handle = $("<p>").text(`${tweet.user.handle}`).addClass("header-tweet-handle");
+  $(`<img src=${tweet.user.avatars}>`).addClass("profile-picture").appendTo($profile);
+  $("<p>").text(`${tweet.user.name}`).appendTo($profile);
+
+  // Add all the header elements to the $tweet
+  $header.append($profile).append($handle).appendTo($tweet);
+
+
+  
+  // `
+  // <article class="tweet-container">
+  //   <header class="header-tweet">
+  //     <div class="header-tweet-profile">
+  //       <img class ="profile-picture" src=${tweet.user.avatars}/>
+  //       <p>${tweet.user.name}</p>
+  //     </div>
+  //     <p class ="header-tweet-handle">${tweet.user.handle}</p>
+  //   </header>
+  //   <p class="tweet-body"">${tweet.content.text}</p>
+  //   <footer class="footer-tweet">
+  //     <p>${tweet.created_at}</p>
+  //     <div class="social-media-buttons">
+  //       <p><i class="fa-solid fa-flag"></i></p>
+  //       <p><i class="fa-solid fa-retweet"></i></p>
+  //       <p><i class="fa-solid fa-heart"></i></p>
+  //     </div>
+  //   </footer>
+  // </article>`;
   return $tweet;
 };
 
