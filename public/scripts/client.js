@@ -38,6 +38,7 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweet) {
+  // Create header elements
   const $tweet = $("<article>").addClass("tweet-container");
   const $profile = $("<div>").addClass("header-tweet-profile");
   const $header = $("<header>").addClass("header-tweet");
@@ -48,27 +49,21 @@ const createTweetElement = function(tweet) {
   // Add all the header elements to the $tweet
   $header.append($profile).append($handle).appendTo($tweet);
 
+  // Add body to tweet
+  $("<p>").text(`${tweet.content.text}`).addClass("tweet-body").appendTo($tweet);
 
+  // Create footer elements
+  const $footer = $("<footer>").addClass("footer-tweet");
+  const $buttons = $("<div>").addClass("social-media-buttons");
+  $("<i>").addClass("fa-solid fa-flag").appendTo($buttons);
+  $("<i>").addClass("fa-solid fa-retweet").appendTo($buttons);
+  $("<i>").addClass("fa-solid fa-heart").appendTo($buttons);
+  $("<p>").text(`${tweet.created_at}`).appendTo($footer);
+  $footer.append($buttons);
+
+  // append footer to tweet
+  $tweet.append($footer);
   
-  // `
-  // <article class="tweet-container">
-  //   <header class="header-tweet">
-  //     <div class="header-tweet-profile">
-  //       <img class ="profile-picture" src=${tweet.user.avatars}/>
-  //       <p>${tweet.user.name}</p>
-  //     </div>
-  //     <p class ="header-tweet-handle">${tweet.user.handle}</p>
-  //   </header>
-  //   <p class="tweet-body"">${tweet.content.text}</p>
-  //   <footer class="footer-tweet">
-  //     <p>${tweet.created_at}</p>
-  //     <div class="social-media-buttons">
-  //       <p><i class="fa-solid fa-flag"></i></p>
-  //       <p><i class="fa-solid fa-retweet"></i></p>
-  //       <p><i class="fa-solid fa-heart"></i></p>
-  //     </div>
-  //   </footer>
-  // </article>`;
   return $tweet;
 };
 

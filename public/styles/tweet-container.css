@@ -51,12 +51,11 @@
 
 .social-media-buttons {
   display:flex;
+  color: darkslateblue;
 }
 
-.social-media-buttons p {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  color: darkslateblue;
+.fa-solid {
+  padding: 0 0.5em;
 }
 
 .highlight {
