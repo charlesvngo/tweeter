@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $(document).ready(function() {
@@ -67,13 +42,22 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+// event handler to post tweets to the tweets db without refreshing the page.
 $(document).ready(function() {
   $("form").submit(function(event) {
-  //   console.log('$("#tweet-text", this).val()', $("#tweet-text", this).val());
-  //   console.log('$("#tweet-text", this).serialize()', $("#tweet-text", this).serialize());
     event.preventDefault();
     $.post("/tweets", $("#tweet-text", this).serialize());
   });
 });
 
-renderTweets(data);
+// Function to get tweets from the tweets db. Called on startup to load initial tweets
+const loadTweets = function() {
+  $(document).ready(function() {
+    $.get("/tweets", function(data) {
+      console.log(data);
+      renderTweets(data);
+    });
+  });
+};
+
+loadTweets();
