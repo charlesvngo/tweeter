@@ -7,7 +7,7 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   z-index: 10;
 }
 
@@ -16,7 +16,6 @@ span {
   margin-left: 1.5em;
   font-size: xx-large;
   font-family: bungee;
-  margin-bottom: 1em;
 }
 
 .right-nav {
@@ -24,7 +23,6 @@ span {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 1em;
 }
 
 .arrow-icon {

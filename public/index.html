@@ -30,12 +30,6 @@
 
   <!-- JS to handle the tweet character counter -->
   <script src="./scripts/composer-char-counter.js"></script>
-  
-  <!-- JS to handle the tweet box shadow -->
-  <script src="./scripts/box-shadow.js"></script>
-
-  <!-- JS to handle the tweet box shadow -->
-  <script src="./scripts/button-hover.js"></script>
 
   <!-- JS to handling time stamps to time ago -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" 
@@ -80,9 +74,10 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <p><i class="fa-solid fa-triangle-exclamation"></i>Big error message!<i class="fa-solid fa-triangle-exclamation"></i></p>
       <form class="tweet-field "method="POST" action="/tweets">
         <label class="tweet-start" for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text" required="required" rows=2></textarea>
         <div class="button-counter">
           <button class ="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>

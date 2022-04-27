@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".fa-solid").hover(function() {
+  $(".social-buttons").hover(function() {
     $(this).addClass("highlight");
   }, function() {
     $(this).removeClass("highlight");

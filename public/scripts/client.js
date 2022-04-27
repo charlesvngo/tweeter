@@ -12,6 +12,21 @@ const renderTweets = function(tweets) {
   }
 };
 
+
+// Helper function to ensure that event handlers are attached to newly generated elements.
+const attachHandlers = function() {
+  $(".social-buttons").hover(function() {
+    $(this).addClass("highlight");
+  }, function() {
+    $(this).removeClass("highlight");
+  });
+  $(".tweet-container").hover(function() {
+    $(this).addClass("shadow");
+  }, function() {
+    $(this).removeClass("shadow");
+  });
+};
+
 const createTweetElement = function(tweet) {
   // Create header elements
   const $tweet = $("<article>").addClass("tweet-container");
@@ -30,15 +45,14 @@ const createTweetElement = function(tweet) {
   // Create footer elements
   const $footer = $("<footer>").addClass("footer-tweet");
   const $buttons = $("<div>").addClass("social-media-buttons");
-  $("<i>").addClass("fa-solid fa-flag").appendTo($buttons);
-  $("<i>").addClass("fa-solid fa-retweet").appendTo($buttons);
-  $("<i>").addClass("fa-solid fa-heart").appendTo($buttons);
+  $("<i>").addClass("social-buttons fa-solid fa-flag").appendTo($buttons);
+  $("<i>").addClass("social-buttons fa-solid fa-retweet").appendTo($buttons);
+  $("<i>").addClass("social-buttons fa-solid fa-heart").appendTo($buttons);
   $("<p>").text(`${timeago.format(tweet.created_at)}`).appendTo($footer);
   $footer.append($buttons);
 
   // append footer to tweet
   $tweet.append($footer);
-  
   return $tweet;
 };
 
@@ -57,13 +71,15 @@ $(document).ready(function() {
 // Function to get tweets from the tweets db. Called on startup to load initial tweets
 const loadTweets = function() {
   $.get("/tweets")
-    .then(data => renderTweets(data));
+    .then(data => renderTweets(data))
+    .then(() => attachHandlers());
 };
 
 // Function will obtain only the newest tweet
 const loadNewTweets = function() {
   $.get("/tweets")
-    .then(data => renderTweets(data.slice(-1)));
+    .then(data => renderTweets(data.slice(-1)))
+    .then(() => attachHandlers());
 };
 
 loadTweets();
