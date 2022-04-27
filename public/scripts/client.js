@@ -7,7 +7,7 @@
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $(document).ready(function() {
-      $(".tweet-database").append(createTweetElement(tweet));
+      $(".tweet-database").prepend(createTweetElement(tweet));
     });
   }
 };
@@ -48,21 +48,22 @@ $(document).ready(function() {
     event.preventDefault();
     const tweet = $("#tweet-text", this).val();
     if (tweet.length < 140 && tweet) {
-      $.post("/tweets", $("#tweet-text", this).serialize());
-      $(".error-message", this).hide();
-    } else {
-      $(".error-message", this).show();
+      $.post("/tweets", $("#tweet-text", this).serialize())
+        .then(() => loadNewTweets());
     }
   });
 });
 
 // Function to get tweets from the tweets db. Called on startup to load initial tweets
 const loadTweets = function() {
-  $(document).ready(function() {
-    $.get("/tweets", function(data) {
-      renderTweets(data);
-    });
-  });
+  $.get("/tweets")
+    .then(data => renderTweets(data));
+};
+
+// Function will obtain only the newest tweet
+const loadNewTweets = function() {
+  $.get("/tweets")
+    .then(data => renderTweets(data.slice(-1)));
 };
 
 loadTweets();
