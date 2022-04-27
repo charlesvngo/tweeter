@@ -30,10 +30,10 @@ const data = [
 ];
 
 const renderTweets = function(tweets) {
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-}
+  for (const tweet of tweets) {
+    $(".tweet-database").append(createTweetElement(tweet));
+  }
+};
 
 const createTweetElement = function(tweet) {
   let $tweet = `
@@ -43,7 +43,7 @@ const createTweetElement = function(tweet) {
         <img class ="profile-picture" src=${tweet.user.avatars}/>
         <p>${tweet.user.name}</p>
       </div>
-      <p class ="header-tweet-handle">${$tweet.user.handle}</p>
+      <p class ="header-tweet-handle">${tweet.user.handle}</p>
     </header>
     <p class="tweet-body"">${tweet.content.text}</p>
     <footer class="footer-tweet">
@@ -56,6 +56,6 @@ const createTweetElement = function(tweet) {
     </footer>
   </article>`;
   return $tweet;
-}
+};
 
 renderTweets(data);
