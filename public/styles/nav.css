@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0px;
   height: 120px;
   width: 100%;
