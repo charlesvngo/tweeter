@@ -31,7 +31,9 @@ const data = [
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $(".tweet-database").append(createTweetElement(tweet));
+    $(document).ready(function() {
+      $(".tweet-database").append(createTweetElement(tweet));
+    });
   }
 };
 
