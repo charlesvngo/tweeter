@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  height: 120px;
+  width: 100%;
+  background-color: #19323C;
+  color: #FFFFFF;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+
+span {
+  margin-left: 1.5em;
+  font-size: xx-large;
+  font-family: bungee;
+  align-self: center;
+}
+
+.right-nav {
+  margin-top: 1.5em;
+  margin-right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  color: #f2545B;
+  animation-duration: 1s;
+  animation-name: wiggle;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wiggle {
+  from {
+    margin-top:0.25em;
+  }
+
+  to {
+    margin-top:0;
+  }
+}
