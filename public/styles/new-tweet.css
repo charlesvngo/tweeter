@@ -41,6 +41,7 @@
   background-color: #F3F7F0;
   outline: none;
   resize: none;
+  height: fit-content;
 }
 
 .counter {
