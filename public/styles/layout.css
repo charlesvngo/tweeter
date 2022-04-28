@@ -42,4 +42,9 @@ body {
   background-color: red;
   color: white;
   border: 0px;
+  display: none;
+ }
+
+ .unhide {
+   display: block;
  }
