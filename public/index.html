@@ -74,10 +74,11 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <p class="error-message"><i class="fa-solid fa-triangle-exclamation"></i>Please enter something to tweet!<i class="fa-solid fa-triangle-exclamation"></i></p>
       <p class="error-message"><i class="fa-solid fa-triangle-exclamation"></i>Tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></p>
       <form class="tweet-field "method="POST" action="/tweets">
         <label class="tweet-start" for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" required="required" rows=2></textarea>
+        <textarea name="text" id="tweet-text" rows=2></textarea>
         <div class="button-counter">
           <button class ="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>

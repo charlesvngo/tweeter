@@ -4,12 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Function that writes tweets to the DOM.
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $(".tweet-database").prepend(createTweetElement(tweet));
   }
 };
 
+// Function to take tweets from the database.
 const createTweetElement = function(tweet) {
   // Create header elements
   const $tweet = $("<article>").addClass("tweet-container");
@@ -59,9 +61,22 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     const tweet = $("#tweet-text", this).val();
-    if (tweet.length < 140 && tweet) {
+    const $errorTooLong = $(this).prev();
+    const $errorNoString = $(this).prev().prev();
+
+    if (!tweet) {
+      $errorNoString.slideDown();
+      $errorTooLong.slideUp();
+    } else if (tweet.length > 140) {
+      $errorTooLong.slideDown();
+      $errorNoString.slideUp();
+    } else {
       $.post("/tweets", $("#tweet-text", this).serialize())
         .then(() => loadNewTweets());
+      // Reset the submission form after sending.
+      $(this)[0].reset();
+      $errorTooLong.slideUp();
+      $errorNoString.slideUp();
     }
   });
 });
