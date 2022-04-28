@@ -4,7 +4,7 @@ nav {
   top: 0px;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #19323C;
   color: #FFFFFF;
   justify-content: space-between;
   z-index: 10;
@@ -28,7 +28,7 @@ span {
 }
 
 .arrow-icon {
-  color: red;
+  color: #f2545B;
   animation-duration: 1s;
   animation-name: wiggle;
   animation-iteration-count: infinite;

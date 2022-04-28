@@ -27,7 +27,8 @@ section article:hover {
 }
 
 .header-tweet-handle {
-  color: lightsteelblue;
+  font-weight: bold;
+  color: #A93F55;
 }
 
 .tweet-body {
@@ -51,7 +52,7 @@ section article:hover {
 
 .social-media-buttons {
   display:flex;
-  color: darkslateblue;
+  color: #19323C;
 }
 
 .fa-solid {
@@ -59,6 +60,6 @@ section article:hover {
 }
 
 .social-media-buttons :hover {
-  color: orange;
+  color: #f2545B;
   cursor: pointer;
 }
