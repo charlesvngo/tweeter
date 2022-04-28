@@ -44,6 +44,7 @@ body {
   border: 0px;
   display: none;
   cursor: pointer;
+  box-shadow:5px 5px 0px rgba(0, 0, 0, 0.26);
  }
 
  .unhide {
