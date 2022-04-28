@@ -6,25 +6,8 @@
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $(document).ready(function() {
-      $(".tweet-database").prepend(createTweetElement(tweet));
-    });
+    $(".tweet-database").prepend(createTweetElement(tweet));
   }
-};
-
-
-// Helper function to ensure that event handlers are attached to newly generated elements.
-const attachHandlers = function() {
-  $(".social-buttons").hover(function() {
-    $(this).addClass("highlight");
-  }, function() {
-    $(this).removeClass("highlight");
-  });
-  $(".tweet-container").hover(function() {
-    $(this).addClass("shadow");
-  }, function() {
-    $(this).removeClass("shadow");
-  });
 };
 
 const createTweetElement = function(tweet) {
@@ -56,8 +39,23 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
-// event handler to post tweets to the tweets db without refreshing the page.
+// Function to get tweets from the tweets db. Called on startup to load initial tweets
+const loadTweets = function() {
+  $.get("/tweets")
+    .then(data => renderTweets(data));
+};
+
+// Function will obtain only the newest tweet
+const loadNewTweets = function() {
+  $.get("/tweets")
+    .then(data => renderTweets(data.slice(-1)));
+};
+
 $(document).ready(function() {
+  //load initial tweets in the database.
+  loadTweets();
+
+  // event handler to post tweets to the tweets db without refreshing the page.
   $("form").submit(function(event) {
     event.preventDefault();
     const tweet = $("#tweet-text", this).val();
@@ -67,19 +65,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// Function to get tweets from the tweets db. Called on startup to load initial tweets
-const loadTweets = function() {
-  $.get("/tweets")
-    .then(data => renderTweets(data))
-    .then(() => attachHandlers());
-};
-
-// Function will obtain only the newest tweet
-const loadNewTweets = function() {
-  $.get("/tweets")
-    .then(data => renderTweets(data.slice(-1)))
-    .then(() => attachHandlers());
-};
-
-loadTweets();

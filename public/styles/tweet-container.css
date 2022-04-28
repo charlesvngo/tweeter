@@ -4,10 +4,10 @@
   margin: 20px 0;
 }
 
-.shadow {
+section article:hover {
   box-shadow:10px 10px 0px rgba(0, 0, 0, 0.26);
 }
-
+ 
 .header-tweet {
   padding: 0.25em;
   display: flex;
@@ -58,7 +58,7 @@
   padding: 0 0.5em;
 }
 
-.highlight {
+.social-media-buttons :hover {
   color: orange;
   cursor: pointer;
 }
