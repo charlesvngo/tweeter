@@ -8,8 +8,10 @@ $(document).ready(function() {
     } else {
       counter.removeClass("negative");
     }
+    // If the enter key is pressed, send the tweet out.
     if (event.originalEvent.key === 'Enter') {
-      $(this).next().children().first().submit();
-    };
+      let $submitButton = $(this).next().children().first();
+      $submitButton.submit();
+    }
   });
 });
