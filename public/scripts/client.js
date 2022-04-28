@@ -64,7 +64,7 @@ $(document).ready(function() {
     const $errorTooLong = $(this).prev();
     const $errorNoString = $(this).prev().prev();
 
-    if (!tweet) {
+    if (!tweet || tweet.trim() === "") {
       $errorNoString.slideDown();
       $errorTooLong.slideUp();
     } else if (tweet.length > 140) {
