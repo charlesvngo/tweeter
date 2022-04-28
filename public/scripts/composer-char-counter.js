@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("#tweet-text").keyup(function(event) {
-    let counter = $(this).next().children().last();
+    let counter = $(this).next().children(":last-child");
     let tweetLength = $(this).val().length;
     counter.val(140 - tweetLength);
     if (counter.val() < 0) {
@@ -10,7 +10,7 @@ $(document).ready(function() {
     }
     // If the enter key is pressed, send the tweet out.
     if (event.originalEvent.key === 'Enter') {
-      let $submitButton = $(this).next().children().first();
+      let $submitButton = $(this).next().children(":first-child");
       $submitButton.submit();
     }
   });

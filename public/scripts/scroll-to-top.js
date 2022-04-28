@@ -6,7 +6,6 @@ $(document).ready(function() {
   });
 
   $(".scroll-up-button").click(function() {
-    // $(window).scrollTop(0);
     $("html").animate({ scrollTop: 0 }, 400);
     $(this).fadeOut("slow", function() {
       $(window).scroll(function() {
@@ -14,6 +13,11 @@ $(document).ready(function() {
         $(this).off("scroll");
       });
     });
+    const $tweetField = $(this).prev().children(":first-child");
+    $tweetField.slideDown();
+    $tweetField.children(":last-child").children(":nth-child(2)").focus();
+
+
 
   });
 });
