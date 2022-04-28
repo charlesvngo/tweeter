@@ -30,3 +30,16 @@ body {
   margin-left: 5%;
   width: 90%;
  }
+
+ .scroll-up-button {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border: 0px;
+ }
