@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 400px;
   width: 100%;
+  margin-bottom: 2em;
   background-color: #0085fa;
   z-index: 1;
   justify-content: flex-end;
