@@ -42,15 +42,14 @@ const createTweetElement = function(tweet) {
 };
 
 // Function to get tweets from the tweets db. Called on startup to load initial tweets
-const loadTweets = function() {
+const loadTweets = function(newestTweet = false) {
+  // If looking for the newest tweet, pass in true
+  let sliceModifier = 0;
+  if (newestTweet) {
+    sliceModifier = -1;
+  }
   $.get("/tweets")
-    .then(data => renderTweets(data));
-};
-
-// Function will obtain only the newest tweet
-const loadNewTweets = function() {
-  $.get("/tweets")
-    .then(data => renderTweets(data.slice(-1)));
+    .then(data => renderTweets(data.slice(sliceModifier)));
 };
 
 $(document).ready(function() {
@@ -72,7 +71,7 @@ $(document).ready(function() {
       $errorNoString.slideUp();
     } else {
       $.post("/tweets", $("#tweet-text", this).serialize())
-        .then(() => loadNewTweets());
+        .then(() => loadTweets(true));
       // Reset the submission form after sending.
       $(this)[0].reset();
       $errorTooLong.slideUp();
