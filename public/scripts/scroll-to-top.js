@@ -1,13 +1,18 @@
 $(document).ready(function() {
 
   $(window).scroll(function() {
-    $(".scroll-up-button").fadeIn("fast");
-    $(this).off();
+    $(".scroll-up-button").fadeIn("slow");
+    $(this).off("scroll");
   });
 
-  $(".scroll-up-button").click(function(event) {
+  $(".scroll-up-button").click(function() {
     $(window).scrollTop(0);
-    $(this).fadeOut("slow");
-    setTimeout($scrollHandler, 1000);
+    $(this).fadeOut("slow", function() {
+      $(window).scroll(function() {
+        $(".scroll-up-button").fadeIn("slow");
+        $(this).off("scroll");
+      });
+    });
+
   });
 });
