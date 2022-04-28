@@ -44,9 +44,15 @@ body {
   border: 0px;
   display: none;
   cursor: pointer;
-  box-shadow:5px 5px 0px rgba(0, 0, 0, 0.26);
+  box-shadow:0.125em 0.125em 0px rgba(0, 0, 0, 0.26);
  }
 
  .unhide {
    display: block;
  }
+
+ @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+}

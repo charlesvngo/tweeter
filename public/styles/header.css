@@ -16,7 +16,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  font-size: 36px;
+  font-size: xx-large;
 
 }
 
@@ -24,4 +24,18 @@
   align-items: flex-end;
   display: flex;
   max-height: 75%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .profile-header {
+    width: 50vw;
+    align-self: center;
+    position: fixed;
+    top: 20%;
+    width: 33vw;
+    margin-left: 5%;
+  }
+  .avatar {
+    max-height: 100%;
+  }
 }
