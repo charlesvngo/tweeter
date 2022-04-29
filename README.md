@@ -7,7 +7,7 @@ Stretch goals have been implemented and the application has a tweet-field collap
 !["Screenshot of desktop version"](https://github.com/charlesvngo/tweeter/blob/master/docs/Screen%20Shot%202022-04-28%20at%209.06.53%20PM.png?raw=true)
 !["Screenshot of mobile version"](https://github.com/charlesvngo/tweeter/blob/master/docs/Screen%20Shot%202022-04-28%20at%209.07.05%20PM.png?raw=true)
 !["Gif of collapse button"](https://github.com/charlesvngo/tweeter/blob/master/docs/giphy-1.gif?raw=true)
-!["Gif of scroll to top button"](https://github.com/charlesvngo/tweeter/blob/master/docs/Screen%20Shot%202022-04-28%20at%209.07.05%20PM.png?raw=true)
+!["Gif of scroll to top button"](https://github.com/charlesvngo/tweeter/blob/master/docs/giphy.gif?raw=true)
 
 ## Dependencies
 
