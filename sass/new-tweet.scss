@@ -1,3 +1,5 @@
+@use "variables";
+
 
 .tweet-field {
   margin: 0.5em;
@@ -8,7 +10,7 @@
 }
 
 .tweet-button {
-  background-color: #f2545B;
+  background-color: variables.$highlight-color;
   font-family: 'Bungee';
   color: white;
   border: none;
@@ -35,7 +37,7 @@
   border: 0;
   border-bottom: 0.25em solid black;
   margin-bottom: 0.5em;
-  background-color: #F3F7F0;
+  background-color: variables.$background-color;
   outline: none;
   resize: none;
   height: fit-content;

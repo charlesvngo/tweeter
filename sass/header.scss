@@ -1,10 +1,12 @@
+@use "variables";
+
 .profile-header {
   display: flex;
   flex-direction: column;
   height: 400px;
   width: 100%;
   margin-bottom: 2em;
-  background-color: #8C5E58;
+  background-color: variables.$primary-color;
   z-index: 1;
   justify-content: flex-end;
   align-items: center;
@@ -12,7 +14,7 @@
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */}
 
 .profile-name {
-  color: #FFFFFF;
+  color: variables.$nav-font-color;
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 0.5em;
   margin-bottom: 0.5em;

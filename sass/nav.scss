@@ -1,11 +1,13 @@
+@use "variables";
+
 nav {
   display: flex;
   position: fixed;
   top: 0px;
   height: 120px;
   width: 100%;
-  background-color: #19323C;
-  color: #FFFFFF;
+  background-color: variables.$nav-color;
+  color: variables.$nav-font-color;
   justify-content: space-between;
   z-index: 10;
 }
@@ -28,7 +30,7 @@ span {
 }
 
 .arrow-icon {
-  color: #f2545B;
+  color: variables.$highlight-color;
   animation-duration: 1s;
   animation-name: wiggle;
   animation-iteration-count: infinite;

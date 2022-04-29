@@ -9,15 +9,15 @@
   justify-content: flex-end;
   align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */}
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
 
 .profile-name {
   color: #FFFFFF;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-size: xx-large;
-
 }
 
 .avatar {
@@ -35,6 +35,7 @@
     width: 33vw;
     margin-left: 5%;
   }
+
   .avatar {
     max-height: 100%;
   }

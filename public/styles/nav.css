@@ -10,7 +10,6 @@ nav {
   z-index: 10;
 }
 
-
 span {
   margin-left: 1.5em;
   font-size: xx-large;
@@ -37,10 +36,9 @@ span {
 
 @keyframes wiggle {
   from {
-    margin-top:0.25em;
+    margin-top: 0.25em;
   }
-
   to {
-    margin-top:0;
+    margin-top: 0;
   }
 }

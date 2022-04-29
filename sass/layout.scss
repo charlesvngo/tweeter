@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+@use "variables";
+
 html {
   box-sizing: border-box;
 }
@@ -15,9 +17,9 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #F3F7F0;
-  font-size: 24px;
+  color: variables.$font-color;
+  background-color: variables.$background-color;
+  font-size: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
 
 }
@@ -39,8 +41,8 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #f2545B;
-  color: #F3F7F0;
+  background-color: variables.$highlight-color;
+  color: variables.$background-color;
   border: 0px;
   display: none;
   cursor: pointer;

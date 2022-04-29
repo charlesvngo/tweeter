@@ -6,9 +6,9 @@
 }
 
 section article:hover {
-  box-shadow:0.25em 0.25em 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0.25em 0.25em 0 rgba(0, 0, 0, 0.26);
 }
- 
+
 .header-tweet {
   padding: 0.25em;
   display: flex;
@@ -33,6 +33,7 @@ section article:hover {
 }
 
 .tweet-body {
+  word-wrap: break-word;
   border-bottom: 0.125em solid #545149;
   padding: 1em;
   font-size: 1em;
@@ -49,10 +50,10 @@ section article:hover {
 
 .footer-tweet p {
   margin: 0;
-} 
+}
 
 .social-media-buttons {
-  display:flex;
+  display: flex;
   color: #19323C;
 }
 
@@ -60,7 +61,7 @@ section article:hover {
   padding: 0 0.5em;
 }
 
-.social-media-buttons:hover {
+.social-buttons:hover {
   color: #f2545B;
   cursor: pointer;
 }
@@ -69,6 +70,7 @@ section article:hover {
   .container {
     margin-top: 7em;
     margin-left: 45%;
-    margin-right: 5%
+    margin-right: 5%;
+    width: 50%;
   }
 }

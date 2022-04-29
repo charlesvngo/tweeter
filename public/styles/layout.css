@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,25 +14,22 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #F3F7F0;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
-
+  font-size: 1.5em;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- .container {
+.container {
   margin-left: 5%;
   width: 90%;
- }
+}
 
- .scroll-up-button {
+.scroll-up-button {
   padding: 1em;
   margin: 1em;
   border-radius: 50%;
@@ -44,14 +42,14 @@ body {
   border: 0px;
   display: none;
   cursor: pointer;
-  box-shadow:0.125em 0.125em 0px rgba(0, 0, 0, 0.26);
- }
+  box-shadow: 0.125em 0.125em 0px rgba(0, 0, 0, 0.26);
+}
 
- .unhide {
-   display: block;
- }
+.unhide {
+  display: block;
+}
 
- @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   body {
     display: flex;
   }

@@ -1,5 +1,7 @@
+@use "variables";
+
 .tweet-container {
-  border: 0.25em solid #545149;
+  border: 0.25em solid variables.$font-color;
   padding: 1em;
   margin-bottom: 2em;
   display: none;
@@ -29,11 +31,12 @@ section article:hover {
 
 .header-tweet-handle {
   font-weight: bold;
-  color: #f2545B;
+  color: variables.$highlight-color;
 }
 
 .tweet-body {
-  border-bottom: 0.125em solid #545149;
+  word-wrap: break-word;
+  border-bottom: 0.125em solid variables.$font-color;
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
@@ -53,15 +56,15 @@ section article:hover {
 
 .social-media-buttons {
   display:flex;
-  color: #19323C;
+  color: variables.$nav-color;
 }
 
 .fa-solid {
   padding: 0 0.5em;
 }
 
-.social-media-buttons:hover {
-  color: #f2545B;
+.social-buttons:hover {
+  color: variables.$highlight-color;
   cursor: pointer;
 }
 
@@ -69,6 +72,7 @@ section article:hover {
   .container {
     margin-top: 7em;
     margin-left: 45%;
-    margin-right: 5%
+    margin-right: 5%;
+    width: 50%;
   }
 }
