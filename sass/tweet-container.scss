@@ -1,4 +1,5 @@
 @use "variables";
+@use "functions";
 
 .tweet-container {
   border: 0.25em solid variables.$font-color;
@@ -8,20 +9,18 @@
 }
 
 section article:hover {
-  box-shadow:0.25em 0.25em 0 rgba(0, 0, 0, 0.26);
+  @include functions.shadow(0.25em);
 }
  
 .header-tweet {
   padding: 0.25em;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  @include functions.centered();
 }
 
 .header-tweet-profile {
-  display: flex;
-  align-items: center;
   justify-content: space-around;
+  @include functions.centered();
 }
 
 .profile-picture {
@@ -55,7 +54,7 @@ section article:hover {
 } 
 
 .social-media-buttons {
-  display:flex;
+  display: flex;
   color: variables.$nav-color;
 }
 
@@ -73,6 +72,5 @@ section article:hover {
     margin-top: 7em;
     margin-left: 45%;
     margin-right: 5%;
-    width: 50%;
   }
 }

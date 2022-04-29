@@ -4,6 +4,7 @@
  * Do not modify these two selectors, please
  */
 @use "variables";
+@use "functions";
 
 html {
   box-sizing: border-box;
@@ -46,7 +47,7 @@ body {
   border: 0px;
   display: none;
   cursor: pointer;
-  box-shadow:0.125em 0.125em 0px rgba(0, 0, 0, 0.26);
+  @include functions.shadow(0.125em);
  }
 
  .unhide {
@@ -56,5 +57,9 @@ body {
  @media only screen and (min-width: 1024px) {
   body {
     display: flex;
+  }
+
+  .container {
+    width: 50%;
   }
 }

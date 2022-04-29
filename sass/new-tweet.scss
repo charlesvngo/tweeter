@@ -1,5 +1,5 @@
 @use "variables";
-
+@use "functions";
 
 .tweet-field {
   margin: 0.5em;
@@ -18,7 +18,7 @@
 }
 
 .tweet-button:hover{
-  box-shadow:0.125em 0.125em 0px rgba(0, 0, 0, 0.26);
+  @include functions.shadow(0.25em);
   cursor: pointer;
 }
 

@@ -1,7 +1,8 @@
 @use "variables";
+@use "functions";
 
 .profile-header {
-  display: flex;
+  @include functions.centered();
   flex-direction: column;
   height: 400px;
   width: 100%;
@@ -9,7 +10,6 @@
   background-color: variables.$primary-color;
   z-index: 1;
   justify-content: flex-end;
-  align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */}
 
@@ -30,7 +30,6 @@
 
 @media only screen and (min-width: 1024px) {
   .profile-header {
-    width: 50vw;
     align-self: center;
     position: fixed;
     top: 20%;

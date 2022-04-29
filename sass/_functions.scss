@@ -1,0 +1,8 @@
+@mixin shadow($size) {
+  box-shadow:$size $size 0px rgba(0, 0, 0, 0.25);
+}
+
+@mixin centered() {
+  display:flex;
+  align-items: center;
+}
