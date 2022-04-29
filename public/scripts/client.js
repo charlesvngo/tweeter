@@ -7,7 +7,11 @@
 // Function that writes tweets to the DOM.
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $(".tweet-database").prepend(createTweetElement(tweet)).children(":first-child").slideDown();
+    const $tweetArticle = createTweetElement(tweet);
+    $(".tweet-database")
+      .prepend($tweetArticle) // Attach the tweet
+      .children(":first-child") // Select the newest tweet
+      .slideDown(); // Animate the new tweet being rendered.
   }
 };
 
